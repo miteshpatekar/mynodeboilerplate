@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html ng-app="Sprinklr" lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PooMithoo</title>
+    <link href="css/app.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link href="css/ngToast.min.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script src="/js/lib/bootstrap/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/app.css">
+</head>
+<body>
+    <div ng-controller="AppCtrl">
+        <toast></toast>
+        <div class="jumbotron-new">
+            <div class="row" style="margin-bottom: -16px;">
+                <!--<nav class="navbar navbar-default gradientnav">-->
+                <nav class="navbar navbar-default">
+                    <div class="col-md-2">
+                        <div style="height:70px;width:140px;margin-left:20px;margin-top:5px"><img style="max-width:100%;max-height:100%" src="/images/Logo.png" /></div>
+                    </div>
+                    <div class="col-md-5 text-left bottom" style="margin-top:1%">
+                        <h2 class="headfont">Poo Mithoo</h2>
+                    </div>
+                    <div class="col-md-5 text-right">
+                        <h4 ng-show="isAuthenticated">
+                            <span style="margin-left:5px;color:#10669E">{{username}} !</span>
+                            <span ng-show="isAuthenticated" style="margin-left:5px"><a style="cursor:pointer" ng-href="" ng-click="LogOut()">LogOut</a></span>
+                        </h4>
+                        <h4><a ng-hide="isAuthenticated" ng-href="/login">Log in</a></h4>
+                    </div>
+                </nav>
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                    <nav>
+                        <ul class="nav nav-pills nav-stacked uppernav">
+                            <!--<li ng-class="{active: $location.path() == '/home'}" ng-click="dashboardClass=''"><a href="#/home">Home</a></li>-->
+                            <li ng-class="{active: $location.path() == '/subscriptions'}" ng-click="dashboardClass=''"><a href="#/subscriptions">Home</a></li>
+                            <li ng-class="dashboardClass" ng-click="onDashboardClick()" ng-model="collapsed">
+                                <a href="" id="btn-1">Dashboard</a>
+                            </li>
+                            <!--<li  ng-show="collapsed" ng-class="{submenu: $location.path() == '/billing'}" ng-click="onSubmenuClick()" style="padding-left:15px"><a class="active" href="#/billing">Billing</a></li>-->
+                            <li ng-class="{submenu: $location.path() == '/billing'}" ng-click="onSubmenuClick()" style="padding-left:15px"><a class="active" href="#/billing">Data</a></li>
+                            <!--<li ng-class="{submenu: $location.path() == '/events'}" ng-click="onSubmenuClick()" style="padding-left:15px"><a href="#/events">Events</a></li>
+                            <li ng-class="{submenu: $location.path() == '/resourceLimitsUsage'}" ng-click="onSubmenuClick()" style="padding-left:15px"><a href="#/resourceLimitsUsage">Resource Limit/Usage</a></li>
+                            <li ng-class="{submenu: $location.path() == '/resourceMonitoring'}" ng-click="onSubmenuClick()" style="padding-left:15px"><a href="#/resourceMonitoring">Resource Monitoring</a></li>
+                            <li ng-class="{submenu: $location.path() == '/orphanedResources'}" ng-click="onSubmenuClick()" style="padding-left:15px"><a href="#/orphanedResources">Orphaned Resources</a></li>
+                            
+                            <li ng-class="{active: $location.path() == '/alerts'}" ng-click="dashboardClass=''"><a href="#/alerts">Alerts</a></li>-->
+                        </ul>
+                    </nav>
+                </div>
+
+                <div class="col-md-10" style="border-left:1px solid #39AAF2">
+                    <div ng-view="ng-view"></div>
+                </div>
+            </div>
+        </div>
+
+        <nav class="navbar navbar-default gradientnav">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <h6 style="margin-left:5px;color:#10669E">@Copyright- Poo-Mithoo</h6>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <!--<script src="js/lib/angular/angular.js"></script>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-route.js"></script>
+    <srcipt src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.0/angular-animate.min.js"></srcipt>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-sanitize.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.1.2/ui-bootstrap.min.js"></script>
+    <script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.10.0.js"></script>
+    <script src="js/lib/angular/ngToast.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/services.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/filters.js"></script>
+    <script src="js/directives.js"></script>
+</body>
+</html>
